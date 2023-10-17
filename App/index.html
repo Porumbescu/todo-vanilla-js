@@ -6,30 +6,31 @@
     <title>Todo app</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <h1>ToDo App</h1>
     <section id="login">
         <h1>Login</h1>
         <form>
-            <input type="email">
-            <input type="password">
-            <button>Login</button>
+            <input type="email" id="loginEmail" placeholder="email">
+            <input type="password" id="loginPassword" placeholder="password">
+            <button id="loginSubmit">Login</button>
         </form>
     </section>
     <section id="register">
         <h1>Register</h1>
     </section>
-    <section id="user">
-        <h1>User Info</h1>
+    <section id="user" hidden>
+        <h1 id ="greetings"></h1>
+        <button id="logout">Logout</button>
     </section>
     <section id="toDos">
-        <h1>My Todos</h1>
+        <h1>My To-Dos</h1>
     </section>
     <section>
-        <h1>Add / Edit Todo</h1>
+        <h1>Add / Edit To-Do</h1>
     </section>
-    <script src='main.js'></script>
+    <script type="module" src='main.js'></script>
 </body>
 </html>
