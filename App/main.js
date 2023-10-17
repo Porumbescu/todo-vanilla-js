@@ -1,5 +1,7 @@
 import { login } from './Login/login.js'
 import { logout } from './Login/logout.js'
+import { todos } from './Database/toDos.js'
+import { addToDo } from './Todos/add.js'
 
 const loginButton = document.getElementById("loginSubmit")
 loginButton.addEventListener('click', login)
@@ -14,3 +16,24 @@ if(isLoggedIn){
 
 const logoutButton = document.getElementById("logout")
 logoutButton.addEventListener('click', logout)
+
+todos.forEach((todo) => {
+    console.log(todo)
+    const toDoDiv = document.createElement('div')
+    toDoDiv.id = todo.id
+    const toDoTask = document.createElement('div')
+    toDoTask.textContent = todo.taskName
+    toDoTask.classList.add('taskName')
+    toDoDiv.appendChild(toDoTask)
+
+    const toDoStatus = document.createElement('span')
+    toDoStatus.textContent = todo.status
+    toDoStatus.classList.add('taskStatus')
+    toDoDiv.appendChild(toDoStatus)
+
+    const toDoList = document.getElementById('toDos')
+    toDoList.appendChild(toDoDiv)
+})
+
+const addEditSubmit = document.getElementById("addEditSubmit")
+addEditSubmit.addEventListener('click', addToDo)

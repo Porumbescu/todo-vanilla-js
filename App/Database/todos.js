@@ -24,3 +24,5 @@ let todos = [
         responsible: "Mihai"
     },
 ]
+
+export { todos }
